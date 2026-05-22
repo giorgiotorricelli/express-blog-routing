@@ -1,10 +1,10 @@
 import express from "express";
-import { read, show } from '../controllers/postControllers.js';
+import { index, show } from '../controllers/postControllers.js';
 
 const router = express.Router();
 
 
-router.get('/', read);
+router.get('/', index);
 router.get('/:id', show);
 
 
