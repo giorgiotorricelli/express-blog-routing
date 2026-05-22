@@ -1,10 +1,14 @@
 import express from 'express';
+import router from './routers/postsRouter.js';
 
-const server = express();
+
+const app = express();
 
 const server_port = process.env.SERVER_PORT;
 
-server.listen(server_port, (error) => {
+app.use('/posts' , router); 
+
+app.listen(server_port, (error) => {
     if (error) {
         console.error(`ERRORE: la porta ${server_port} è già in utilizzo`);
         return;
